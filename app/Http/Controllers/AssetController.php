@@ -192,4 +192,19 @@ public function destroy($id)
             'data' => $data
         ]);
     }
+
+    // Statistik berdasarkan tahun pembelian
+    public function assetsByYear()
+    {
+        $data = Asset::selectRaw('YEAR(purchase_date) as tahun, COUNT(*) as total')
+            ->groupBy('tahun')
+            ->orderBy('tahun', 'asc')
+            ->get();
+
+        return response()->json([
+            'message' => 'Statistik aset berdasarkan tahun',
+            'data' => $data
+        ]);
+    }
+
 }

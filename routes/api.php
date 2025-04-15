@@ -21,6 +21,7 @@ Route::middleware('auth:sanctum')->get('/maintenance', [MaintenanceController::c
 Route::middleware('auth:sanctum')->get('/assets/search', [AssetController::class, 'search']);
 Route::middleware('auth:sanctum')->get('/assets/list', [AssetController::class, 'list']);
 Route::middleware('auth:sanctum')->get('/stats/assets-by-location', [AssetController::class, 'assetsByLocation']);
+Route::middleware('auth:sanctum')->get('/assets/statistics/year', [AssetController::class, 'assetsByYear']);
 Route::middleware('auth:sanctum')->get('/stats/maintenance-by-status', [MaintenanceController::class, 'maintenanceByStatus']);
 Route::middleware('auth:sanctum')->get('/stats/assets-by-category', [AssetController::class, 'assetsByCategory']);
 Route::middleware('auth:sanctum')->get('/dashboard/summary', [DashboardController::class, 'summary']);
